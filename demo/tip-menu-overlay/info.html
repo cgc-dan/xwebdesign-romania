@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Instalare si Editare</title>
+<style>
+html{ scroll-behavior: smooth;}
+*{box-sizing:border-box;}
+body{width:90%;margin:0 auto;font-size: calc(15px + 6 * ((100vw - 320px) / 680));color:#033;font-weight:100;padding:0;box-sizing:border-box;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;background-color:#222222;
+background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233C56d1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");}
+
+#header,
+#continut,
+#footer{display:block;width:100%;height:auto;margin:0 auto;}
+#container{display:block;width:100%;height:auto;margin:3em auto .5em auto;background-color:#fff;}
+
+#header,
+#footer{background-color:#222;padding:1em 0em .5em;}
+
+#header h1{display:block;width:90%;height:auto;margin:0 auto;font-size: calc(24px + 6 * ((100vw - 320px) / 680));font-weight:500;color:#f1f1f1;}
+#header span{display:block;width:90%;height:auto;margin:0 auto;font-size: calc(13px + 6 * ((100vw - 320px) / 680));font-weight:100;color:#f1f1f1;}
+
+.boxed{display:block;width:90%;height:auto;margin:0 auto;float:none;clear:left;padding:.5em 0em .5em;}
+
+.plus-icon{background-color:#222;padding:0em .2em 0em; text-align:center;}
+.plus-icon svg{filter:invert(100%);opacity:.7;}
+/*** SVG ***/
+.svg-icon-plus {width: 1em;height: 1em;}
+.svg-icon-plus path,
+.svg-icon-plus polygon,
+.svg-icon-plus rect {fill: #000000;}
+.svg-icon-plus circle {stroke: #000000;stroke-width: 1;}
+
+.plus-icon-blue{background-color:#22434A;padding:0em .2em 0em; text-align:center;}
+.plus-icon-blue svg{}
+/*** SVG ***/
+.svg-icon-blue {width: 1em;height: 1em;}
+.svg-icon-blue path,
+.svg-icon-blue polygon,
+.svg-icon-blue rect {fill: #22434A;}
+.svg-icon-blue circle {stroke: #22434A;stroke-width: 1;}
+
+.screenshot{display:block;width:90%;height:auto;margin:10px auto 12px auto;text-align:center;}
+.screenshot em{display:block;text-align:center;margin:5px auto 10px auto;font-size:14px;}
+.screenshot img{display:block;width:80%;height:auto;margin:0 auto;box-shadow:0 5px 17px #999;border-radius:3px;}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.downloadwrapper{display:block;width:100%;height:auto;margin:0 auto;padding:2em 0em 2em;text-align:center;background-color:#000;background-image: url(resurse-doc/cover-mytipmenu-obs.jpg);background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:fixed;}
+.downloadwrapper_footer{display:block;width:100%;height:auto;margin:0 auto;padding:2em 0em 2em;text-align:center;background-color:#000;background-image: none;background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:fixed;}
+.download{display:block;width:80%;height:auto;margin:0 auto;padding:1.5em 2em 1.5em;text-align:left;background-color:rgba(0,0,0,.70);}
+.download p{display:block;width:90%;height:auto;margin:0 auto;font-size: calc(18px + 6 * ((100vw - 320px) / 680));font-weight:100;color:#fff;}
+.download h2{display:block;width:90%;height:auto;margin:0 auto;font-size: calc(28px + 6 * ((100vw - 320px) / 680));font-weight:400;color:#fff;}
+.download a,.download a:visited{display:block;width:40%;height:auto;margin:20px auto 22px auto;padding:1em 0em 1em;text-align:center;text-decoration:none;color:rgba(255,255,255,.50);border-radius:7px;background-color:#233C56;box-shadow:0 2px 3px 1px #000;transition:all .3s;font-size: calc(12px + 6 * ((100vw - 320px) / 680));text-transform:uppercase;}
+.download a:hover{background-color: rgb(251,7,127);color:#fff;text-decoration:none;box-shadow:0 1px 5px -3px #000;}
+h2 span.swing{display:inline-block;width:30px;height:auto;text-align:center;transform:rotate(-20deg);transform-origin:top center;animation: SwingIt 2s infinite;}
+.svg-icon-premium {width: 1em;height: 1em;transform:translate(2px,2px);margin-right:3px;}
+.svg-icon-premium path,
+.svg-icon-premium polygon,
+.svg-icon-premium rect {fill: #ffffff;}
+.svg-icon-premium circle {stroke: #ffffff;stroke-width: 1;}
+.svg-icon-download {width: 1em;height: 1em;margin-left:-10px;}
+.svg-icon-download path,
+.svg-icon-download polygon,
+.svg-icon-download rect {fill: #f1f1f1;}
+.svg-icon-download circle {stroke: #f1f1f1;stroke-width: 1;}
+
+@keyframes SwingIt  {
+    0% {transform:rotate(20deg);}
+	50% {transform:rotate(-20deg);fill: #FC3;stroke:#FC3;}
+	100% {transform:rotate(20deg);}}
+
+
+
+video, iframe{display:block;width:80%;min-width:90%;max-width:95%;height:550px;min-height:400px;max-height:650px;margin:10px auto 12px auto;}
+
+.downloadbutton{display:block;width:50%;height:auto;margin:0 auto;float:left;text-align:center;padding:.7em 0em .7em;}
+.downloadbutton a,
+.downloadbutton a:visited{padding:.5em 2em .5em;text-align:center;border-radius:7px;background-color:#09C;box-shadow:0 2px 3px -1px #000;transition:all .3s;font-size: calc(14px + 6 * ((100vw - 320px) / 680));text-transform:uppercase;color:#fff;}
+.downloadbutton a:hover{background-color:#233C56;color:#fff;text-decoration:none;box-shadow:0 1px 5px -3px #999;}
+
+.myoutube{display:block;width:100%;height:auto;margin:5px auto 6px auto;text-align:center;box-sizing:border-box;text-align:center;float:none;clear:left;}
+.myoutube p:nth-child(1){width:70%;height:auto;text-align:left;background-color:#f1f1f1;text-indent:12px;}
+.myoutube p:nth-child(2){width:30%;height:auto;}
+
+.myoutube p:nth-child(1),.myoutube p:nth-child(2){display:block;float:left;padding:.3em 0em .3em;}
+.myoutube p:nth-child(2){background-color:#ff0000;}
+.myoutube p:nth-child(2):hover {background-color:#F33;}
+.myoutube p:nth-child(2) a,.myoutube p:nth-child(2) a:visited{text-align:center;color:#fff;text-decoration:none;opacity:0.8;transition:all .3s;}
+.myoutube p:nth-child(2) a:hover{color:#fff;text-decoration:none;opacity:1;}
+
+.selection{display:block;width:100%;height:auto;margin:0 auto;box-sizing:border-box;float:none;clear:left;text-align:center;}
+.selection span{display:block;width:50%;height:auto;margin:0 auto;float:left;text-align:center;}
+.selection a, .selection a:visited{display:block;width:100%;height:auto;margin:0 auto;background-color:#09C;color:#f1f1f1;text-decoration:none;padding:.7em 0em .7em;}
+.selection a:hover{background-color:#22434A;color:#fff;text-decoration:none;}
+.clearfix{display:block;width:100%;height:0px;float:none;clear:left;}
+a, a:visited{color:#F63;text-decoration:none;}
+a:hover{color:#06C;text-decoration:none;}
+
+
+.share{display:block;width:90px;height:35px;position:fixed;top:10px;left:1px;}
+.innerfooter{display:block;width:80%;height:auto;margin:10px auto 12px auto;padding:.5em 2em .3em;color:#ccc;opacity:.8;}
+.innerfooter a,.innerfooter a:visited{display:block;width:90%;height:auto;margin:5px auto;text-decoration:none;border:1px solid rgba(204,204,204,0.0);padding:.3em .5em .3em;font-size: calc(13px + 6 * ((100vw - 320px) / 680));font-weight:100;color:#CCC;transition: all .3s;}
+.innerfooter a:hover{text-decoration:none;border:1px solid rgba(204,204,204,1);padding:.3em .5em .3em;font-size: calc(13px + 6 * ((100vw - 320px) / 680));font-weight:100;color:#09C}
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+    
+    
+    <div id="header">
+      <h1>Tip Menu Overlay</h1>
+      <span>compatibil cu OBS si SplitCam Software</span>
+    </div>
+    
+    
+<div class="downloadwrapper">       
+       <div class="download">
+       <h2><span class="swing"><svg class="svg-icon-premium" viewBox="0 0 20 20">
+							<path d="M15.94,10.179l-2.437-0.325l1.62-7.379c0.047-0.235-0.132-0.458-0.372-0.458H5.25c-0.241,0-0.42,0.223-0.373,0.458l1.634,7.376L4.06,10.179c-0.312,0.041-0.446,0.425-0.214,0.649l2.864,2.759l-0.724,3.947c-0.058,0.315,0.277,0.554,0.559,0.401l3.457-1.916l3.456,1.916c-0.419-0.238,0.56,0.439,0.56-0.401l-0.725-3.947l2.863-2.759C16.388,10.604,16.254,10.22,15.94,10.179M10.381,2.778h3.902l-1.536,6.977L12.036,9.66l-1.655-3.546V2.778z M5.717,2.778h3.903v3.335L7.965,9.66L7.268,9.753L5.717,2.778zM12.618,13.182c-0.092,0.088-0.134,0.217-0.11,0.343l0.615,3.356l-2.938-1.629c-0.057-0.03-0.122-0.048-0.184-0.048c-0.063,0-0.128,0.018-0.185,0.048l-2.938,1.629l0.616-3.356c0.022-0.126-0.019-0.255-0.11-0.343l-2.441-2.354l3.329-0.441c0.128-0.017,0.24-0.099,0.295-0.215l1.435-3.073l1.435,3.073c0.055,0.116,0.167,0.198,0.294,0.215l3.329,0.441L12.618,13.182z"></path>
+						</svg></span> My Tip Menu - Overlay</h2>
+       <p>Overlay design pentru programe de live streaming</p>
+         <a href="my-tip-menu.html" target="_blank"><svg class="svg-icon-download" viewBox="0 0 20 20">
+							<path d="M17.237,3.056H2.93c-0.694,0-1.263,0.568-1.263,1.263v8.837c0,0.694,0.568,1.263,1.263,1.263h4.629v0.879c-0.015,0.086-0.183,0.306-0.273,0.423c-0.223,0.293-0.455,0.592-0.293,0.92c0.07,0.139,0.226,0.303,0.577,0.303h4.819c0.208,0,0.696,0,0.862-0.379c0.162-0.37-0.124-0.682-0.374-0.955c-0.089-0.097-0.231-0.252-0.268-0.328v-0.862h4.629c0.694,0,1.263-0.568,1.263-1.263V4.319C18.5,3.625,17.932,3.056,17.237,3.056 M8.053,16.102C8.232,15.862,8.4,15.597,8.4,15.309v-0.89h3.366v0.89c0,0.303,0.211,0.562,0.419,0.793H8.053z M17.658,13.156c0,0.228-0.193,0.421-0.421,0.421H2.93c-0.228,0-0.421-0.193-0.421-0.421v-1.263h15.149V13.156z M17.658,11.052H2.509V4.319c0-0.228,0.193-0.421,0.421-0.421h14.308c0.228,0,0.421,0.193,0.421,0.421V11.052z"></path>
+						</svg> VEZI DEMO ONLINE</a>
+       </div>
+  </div>  
+      
+      
+      
+      
+   <div class="selection">
+     <span><a href="#obs">OBS</a></span>
+     <span><a href="#splitcam">SplitCam</a></span>
+     
+     <div class="clearfix"></div>
+   </div> 
+    
+    
+    
+    
+    <div id="continut">
+    
+         <div class="boxed">
+           <h3>Ce este</h3>
+           <p><strong>Tip Menu Overlay</strong> este o pagina web care poate fi folosita de pe calculator sau laptop in OBS sau SplitCam</p>
+         </div>
+         
+         <div class="boxed">
+           <h3>Instalare si Editare</h3>
+           <p>Instalarea este simpla si nu necesita cunostinte avansate, pe de alta parte, editarea e un pic mai dificila in functie programul live stream pe care il folosesti OBS sau SplitCam</p>
+           <p>Alege versiunea de instalare comform programului pe care-l folosesti si urmeaza pasi aferenti.<br>Pentru ca unii utilizatori au selectata limba Romana in setarile OBS, voi folosi ambele variante pentru denumiri (acolo unde se aplica)</p>
+           
+           <div id="obs">
+             <h2>OBS</h2>
+             <p>Descarca si instaleaza programul OBS daca nu il ai deja instalat in laptop sau PC.</p>
+             <p>Descarca arhiva zip My Tip Menu si dezarhiveaza continutul intr-un fisier vizibil (ca sa nu-l cauti mai tarziu)</p>
+             
+               <p>Deschide programul OBS. In panoul (defapt, sub panoul) <em>Sources/Surse</em> click pe iconita plus <span class="plus-icon"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span> (in print-screen-ul meu are o alta culoare pentru ca folosesc o tema personalizata pentru OBS, dar functionalitatea e aceeasi. </p>
+               <p>Din optiunile afisate, selecteaza Browser</p>
+               <div class="screenshot"><span><em>Fig.1 Selecteaza sursa Browser</em></span>
+                 <a href="resurse-doc/1-adauga-sursa-scene.jpg" target="_blank"><img src="resurse-doc/1-adauga-sursa-scene.jpg" alt="Adauga Sursa Browser"/></a>
+                 </div>
+                 
+                 
+                 
+               <p>Bifeaza optiunea Fisier local/ Local file si butonul Rasfoieste/Browse</p>
+               <div class="screenshot"><span><em>Fig.2 Optiuni Browser</em></span>
+                 <a href="resurse-doc/2-optiunea-browser.jpg" target="_blank"><img src="resurse-doc/2-optiunea-browser.jpg" alt="Selecteaza Sursa"/></a>
+                 </div>
+                 
+                 
+                 
+               <p>Cauta folderul pe care l-ai descarcat si selecteaza fisierul <code>my-tip-menu.html</code></p>
+               <p>Seteaza Latime/Width si Inaltime/Height. Personal folosesc un laptop cu rezolutie de 1920/1080, rezoltia device-ului tau poate fi diferita asa ca, va trebui sa faci anumite setari pe cont propriu. Oricum, OBS permite redimensionare in fereastra  Previzualizare/Preview daca manipulezi chenarul rosu.</p>
+               <div class="screenshot"><span><em>Fig.3 Setari sursa Browser</em></span>
+                 <a href="resurse-doc/3-adauga-sursa-browser.jpg" target="_blank"><img src="resurse-doc/3-adauga-sursa-browser.jpg" alt="Setari Sursa"/></a>
+                 </div>
+                 
+                 
+                 
+               <p>Click dreapta pe browserul sursa si alege Interactioneaza / Interact</p>
+               <p>Aceasta functie OBS permite interactia cu pagina sursa si reda in timp real modificarile pe care le fac - In modul Studio, poti vedea ce editari se fac in Interact.<br>
+               Modul Studio este optiunea OBS care afiseaza doua ferestre, Previzualizeaza/Preview in stanga si Program in dreapta</p>
+               <div class="screenshot"><span><em>Fig.4 Interactiune via OBS</em></span>
+                 <a href="resurse-doc/4-interact-editeaza-in-obs.jpg" target="_blank"><img src="resurse-doc/4-interact-editeaza-in-obs.jpg" alt="Interact si Editare"/></a>
+                 </div>
+                 
+                 
+               <p>Click pe oricare element text si editeaza/schimba continutul</p>
+               <p>Modificarile prin functia OBS Interact NU sunt permanente, nu schimba sursa si continutul paginii web permanent. Click pe Reimprospateaza/Refresh si tot continutul revine la cel initial</p>
+               
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/_MFTiGpaki0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               <div class="myoutube">
+                <p>Video incarcat pe canalul YouTube</p>
+                <p><a href="https://www.youtube.com/watch?v=_MFTiGpaki0" target="_blank">Vezi Video</a></p>
+                <div class="clearfix"></div>
+               </div>
+
+           </div>
+           
+           
+           <div id="splitcam">
+             <h2>SplitCam</h2>
+             <p>Ai nevoie de arhiva zip, dezarhivata in laptopul sau pc-ul tau si programul SplitCam Software</p>    
+               <p>Deschide programul SpliCam. Langa panoul <em>Media Layers</em> click pe iconita plus <span class="plus-icon-blue"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path stroke="#0099FF" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span> si selecteaza optiunea Browser</p>
+               
+               <p>Cauta folderul pe care l-ai descarcat si selecteaza fisierul <code>my-tip-menu.html</code> in browserul tau. Copie adresa URL din bara de sus</p>
+               <p>Click pe butonul albastru Add</p>
+               <div class="screenshot"><span><em>Fig.1 Selecteaza Browser ca sursa layer</em></span>
+                 <a href="resurse-doc/1-adauga-sursa-browser-splitcam.jpg" target="_blank"><img src="resurse-doc/1-adauga-sursa-browser-splitcam.jpg" alt="Selecteaza sursa Browser"/></a>
+             </div>
+                 
+               <div class="screenshot"><span><em>Fig.2 Adauga fisierul html</em></span>
+                 <a href="resurse-doc/2-browser-sursa-splitcam.jpg" target="_blank"><img src="resurse-doc/2-browser-sursa-splitcam.jpg" alt="Adauga layerul Browser"/></a>
+             </div>
+                 
+                 <p>In SplitCam nu exista optiunea de a interactiona cu sursa Browser iar modificarile/editarile continutului paginii web <code>my-tip-menu.html</code> se pot face doar manual editand liniile de cod sau varianta mai simpla, deschide fisierul <a href="my-tip-menu.html" target="_blank">my-tip-menu.html</a> in browserul tau prestabilit, click pe elementele text, editeaza continut dupa care adaugi URL in SplitCam (pasul 2 mentional mai sus).</p>
+                 <p>Daca vrei sa editezi continutul permanent, dar nu ai un editor markup la indemana, iti recomand <a href="../../editor-sursa.html" target="_blank">Editorul Sursa</a>, este o pagina html simpla care iti permite accesul la sursa codului, editare manuala a codului si deasemenea poti salva aceste mofificari pe care le-ai facut</p>
+               
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K7eGif62Lh0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="myoutube">
+                <p>Video incarcat pe canalul YouTube</p>
+                <p><a href="https://www.youtube.com/watch?v=K7eGif62Lh0" target="_blank">Vezi Video</a></p>
+                <div class="clearfix"></div>
+               </div>
+           </div>
+           
+           
+           
+         </div>
+    
+    
+    </div>
+    
+
+    
+    
+    
+    <div id="footer">
+        <div class="innerfooter">
+                   <p><strong>Linkuri utile:</strong></p>
+                  <div><a href="ro-tip-menu-overlay.zip" target="_blank">Descarca acest material, include My Tip Menu overlay, Editorul Sursa si tutorialul complet</a></div>
+                  <div><a href="https://github.com/cgc-dan/xwebdesign-romania/discussions" target="_blank">Posteaza sugestii, feedback, intrebari in sectiunea de pe site</a></div>
+                  <div><a href="https://www.reddit.com/r/AdultWebDesignRomania/" target="_blank">Mai multe materiale pentru webcam performeri le gasesti pe AdultWebDesign Romania</a></div>
+                  <div>Personalizare si editare My Tip Menu de catre mine, nu face obiectul acestui material oferit gratuit</div>
+    </div>
+     
+    </div>
+
+ 
+
+
+</div>
+
+<div class="share">
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Be right back - Custom #SplitCam overlay for webcam performers download and demo online" data-via="CamgirlCloud" data-hashtags="camgirl" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                 
+</div>
+
+
+
+
+</body>
+</html>
