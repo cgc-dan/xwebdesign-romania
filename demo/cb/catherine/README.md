@@ -18,14 +18,18 @@ Pentru o pozitionare mai buna recomand `margin:120px auto 50px -146px;` ca valoa
 ### Daca intampini una dintre problemele de mai jos:
 
 **dupa instalare pe Chaturbate se afiseaza doar codul markup**
+
 *contul tau Chaturbate Nu este verificat*
 
 **imaginile nu apar**
+
 *vezi daca ai inlocuit URL-ul imaginilor corect*
 `https://host-imagine.com/imagina-ta.jpg`
 
 **nu arata calumea pe mobil, nu este responsive**
+
 *familiarizeaza-te cu platforma Chaturbate. Este imposibil full responsive pentru ca nu se poate adauga @media css*
+
 *toate elementele folosec valori scalabile/fluid pentru width cu unitatea % si pentru font-size am folosit varianta*
 `font-size: calc(15px + 6 * ((100vw - 320px) / 680));` 
 
